@@ -17,6 +17,7 @@ function AppContent() {
     deleteForm,
     setResponses,
     setFormId,
+    submitResponses, // Add submitResponses from context
   } = useContext(FormContext);
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -63,11 +64,13 @@ function AppContent() {
     setResponses(newResponses);
   };
 
-  const nextQuestion = () => {
+  const nextOrSubmit = () => {
     if (
-      currentQuestionIndex <
+      currentQuestionIndex ===
       forms.find((form) => form._id === formId).questions.length - 1
     ) {
+      submitResponses();
+    } else {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
@@ -220,7 +223,7 @@ function AppContent() {
         )}
       </Formik>
       <h2>Forms</h2>
-      <p>Click on a Title to Give response:</p>
+      <p>Click on a form title to give response:</p>
       <List
         dataSource={forms}
         renderItem={(form) => (
@@ -250,13 +253,12 @@ function AppContent() {
                   <div key={questionIndex}>
                     <div className="question-header">
                       <h3 className="question-text">{question.questionText}</h3>
-                      <span className="question-number">
-                        {questionIndex + 1}/
-                        {
+                      <div className="question-number">
+                        {`Question ${questionIndex + 1}/${
                           forms.find((form) => form._id === formId).questions
                             .length
-                        }
-                      </span>
+                        }`}
+                      </div>
                     </div>
                     <ul>
                       {question.options.map((option, optionIndex) => (
@@ -290,8 +292,11 @@ function AppContent() {
             <Button type="primary" onClick={prevQuestion}>
               Previous
             </Button>
-            <Button type="primary" onClick={nextQuestion}>
-              Next
+            <Button type="primary" onClick={nextOrSubmit}>
+              {currentQuestionIndex ===
+              forms.find((form) => form._id === formId).questions.length - 1
+                ? "Submit"
+                : "Next"}
             </Button>
           </div>
         </div>
