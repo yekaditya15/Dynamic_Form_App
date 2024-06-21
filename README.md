@@ -1,8 +1,14 @@
+## Live Demo
 
+You can view the live demo [here](https://dynamic-form-app-u8yt.vercel.app/).
 
 # Dynamic Form Builder and Response Collector
 
 This project is a web application built with React that allows users to create dynamic forms, fill them out, and collect responses. It includes features like adding questions, selecting question types (single-choice or multiple-choice), saving forms, fetching saved forms, deleting forms, and submitting responses. The forms and responses are managed using a Node.js backend with MongoDB for data storage.
+
+### Screenshots
+
+![Screenshot 1](https://firebasestorage.googleapis.com/v0/b/portfolio-c5c0a.appspot.com/o/Screenshot%202024-06-21%20at%2012.48.35%E2%80%AFPM.png?alt=media&token=cf115a82-702b-43f0-9303-65c1e36fe70a)
 
 ## Features
 
