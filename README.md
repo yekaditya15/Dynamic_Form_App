@@ -96,6 +96,4 @@ Contributions are welcome! If you have any suggestions, improvements, or issues,
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
 
-Make sure to replace `<repository-url>` with the actual URL of your GitHub repository. This README file provides an overview of your project, including features, technologies used, installation instructions, API endpoints, folder structure, and information on contributing and licensing. Adjust it further based on additional details specific to your application and project requirements.
