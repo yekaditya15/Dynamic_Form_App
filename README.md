@@ -1,6 +1,4 @@
-Sure, here's a complete README file for your project:
 
----
 
 # Dynamic Form Builder and Response Collector
 
