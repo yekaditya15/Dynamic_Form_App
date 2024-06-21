@@ -10,8 +10,17 @@ const app = express();
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors());
 app.use(morgan("dev"));
+app.use(
+  cors({
+    origin: [
+      "https://dynamic-form-app-u8yt.vercel.app",
+      "http://localhost:3000",
+    ],
+    methods: ["POST", "GET", "PUT", "DELETE", "PATCH"],
+    credentials: true,
+  })
+);
 
 // Connect to MongoDB
 connectDB();
