@@ -16,6 +16,11 @@ app.use(morgan("dev"));
 // Connect to MongoDB
 connectDB();
 
+// Home Route
+app.get("/", (req, res) => {
+  res.send("Hi from the backend");
+});
+
 // Routes
 app.use("/api", formRoutes);
 
